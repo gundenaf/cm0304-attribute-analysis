@@ -1,0 +1,6 @@
+*.o
+*.elf
+__pycache__/
+*.exe
+*.radar-tailjmp-backup
+*.radar-temp

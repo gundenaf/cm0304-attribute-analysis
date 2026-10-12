@@ -1,0 +1,205 @@
+<container title="Player Profile Panel" id="pppp">
+	<layout kind="arve" algn="middle,extend" offs="0"/>
+	<layout kind="stks" algn="horizontal" laye="true" inse="0"/>	
+	<layout kind="stks" algn="all" inse="0" />
+	
+
+	<!-- PANEL PROPERTIES -->
+
+	<!-- 
+		- COLOUR codes:
+			ctec : colour for (normal) technical attribute value
+			cteb : colour for (exceptional) technical attribute value
+			cphy : colour for (normal) physical attribute value
+			cphb : colour for (exceptional) physical attribute value
+			cmen : colour for (normal) mental attribute value
+			cmeb : colour for (exceptional) mental attribute value
+			cgoa : colour for (normal) goalkeeping attribute value
+			cgob : colour for (exceptional) goalkeeping attribute value
+			catt : colour for attribute text
+			cats : colour far additional/special attribute text (form/foot/etc)
+			catv : colour for additional/special attribute value
+			cext : colour for extra info text (loan,transfer,etc)
+			
+		- OTHER:
+			exca : "exceptional attribute" value lower boundary (ie 15: >= 15 uses 'exc' colour
+	-->
+	
+	<colour id="ctec" red="255" green="208" blue="0" />
+	<colour id="cteb" red="255" green="240" blue="0" />
+	<colour id="cphy" red="255" green="208" blue="0" />
+	<colour id="cphb" red="255" green="240" blue="0" />
+	<colour id="cmen" red="255" green="208" blue="0" />
+	<colour id="cmeb" red="255" green="240" blue="0" />
+	<colour id="cgoa" red="255" green="208" blue="0" />
+	<colour id="cgob" red="255" green="240" blue="0" />
+	<colour id="catt" red="255" green="255" blue="255" />
+	<colour id="cats" red="255" green="208" blue="0" />
+	<colour id="catv" red="255" green="100" blue="0" />
+	<colour id="cext" red="50" green="208" blue="255" />
+	<integer id="exca" value="15" />
+	
+	
+	
+	<!-- SHOW TRAINING AREA -->
+	
+	<widget kind="gbox" id="shtp">
+		<layout kind="arhz" algn="right" offs="0"/>
+		<layout kind="stks" algn="top" laye="true" inse="0" />
+		<layout kind="fitc" algn="vertical" offs="0"/>
+
+		<widget kind="cbox" id="shtr" clke="shtr" text="Show effects of training" asiz="horizontal" scst="true" sdst="true"/>
+	</widget>
+	
+	
+	<!-- MAIN AREA -->
+	
+	<widget kind="gbox">
+	
+		<layout kind="arhz" algn="fill" offs="0" />
+		<layout kind="stks" algn="vertical" laye="true" inse="0" />
+		
+	
+        <widget kind="tbox" title="Attribute analysis">
+            <layout kind="stks" algn="all" laye="true" inse="0" />
+            <widget kind="gbox" id="radr">
+                <layout kind="stks" algn="all" laye="true" inse="0" />
+            </widget>
+        </widget>
+
+		<widget kind="tbox" title="Technical">
+			<layout kind="stks" algn="top" inse="0" />
+			<layout kind="stks" algn="all" laye="true" inse="0" />
+			<widget kind="tabl" id="pltt" mode="stripe_rows,fill_columns" layout="-6,-2, -1">
+				<!-- auto size the rows -->
+				<true id="asrw" />
+				
+				<!-- table stretches to fit rows -->
+				<true id="tstr" />
+				
+				<!-- row spacing -->
+				<integer id="rwsp" value="3"/>
+				
+				<!-- default item properties -->
+				<record id="defp">
+					<!-- all items autosize vertically -->
+					<flags id="asiz" value="vertical"/>
+				</record>
+				
+				<!-- small inset from sides of table -->
+				<list id="cdpr">
+					<record indx="0">
+						<integer id="left" value="4"/>
+		  			</record>
+		  			<record indx="1">
+						<integer id="rght" value="4"/>
+		  			</record>
+		  			<record indx="2">
+						<flags id="algn" value="centre"/>
+		  			</record>
+				</list>
+
+				<!-- columns should be left and right aligned respectively -->
+				<list id="clpr">
+					<record indx="0">
+		  				<flags id="algn" value="left,centre_y"/>
+		  			</record>
+		  			<record indx="1">
+		  				<flags id="algn" value="right,centre_y"/>
+		  			</record>
+				</list>
+			</widget>
+		</widget>
+	
+		<widget kind="tbox" title="Mental">
+			<layout kind="stks" algn="top" inse="0" />
+			<layout kind="stks" algn="all" laye="true" inse="0" />
+			<widget kind="tabl" id="plmt" mode="stripe_rows,fill_columns" layout="-6,-2, -1">
+				<!-- auto size the rows -->
+				<true id="asrw" />
+				
+				<!-- table stretches to fit rows -->
+				<true id="tstr" />
+				
+				<!-- row spacing -->
+				<integer id="rwsp" value="3"/>
+				
+				<!-- default item properties -->
+				<record id="defp">
+					<!-- all items autosize vertically -->
+					<flags id="asiz" value="vertical"/>
+				</record>
+				
+				<!-- small inset from sides of table -->
+				<list id="cdpr">
+					<record indx="0">
+						<integer id="left" value="4"/>
+		  			</record>
+		  			<record indx="1">
+						<integer id="rght" value="4"/>
+		  			</record>
+		  			<record indx="2">
+						<flags id="algn" value="centre"/>
+		  			</record>
+				</list>
+
+				<!-- columns should be left and right aligned respectively -->
+				<list id="clpr">
+					<record indx="0">
+		  				<flags id="algn" value="left,centre_y"/>
+		  			</record>
+		  			<record indx="1">
+		  				<flags id="algn" value="right,centre_y"/>
+		  			</record>
+				</list>
+			</widget>
+		</widget>
+	
+		<widget kind="tbox" title="Physical">
+			<layout kind="stks" algn="top" inse="0" />
+			<layout kind="stks" algn="all" laye="true" inse="0" />
+			<widget kind="tabl" id="plpt" mode="stripe_rows,fill_columns" layout="-6,-2, -1">
+				<!-- auto size the rows -->
+				<true id="asrw" />
+				
+				<!-- table stretches to fit rows -->
+				<true id="tstr" />
+				
+				<!-- row spacing -->
+				<integer id="rwsp" value="3"/>
+				
+				<!-- default item properties -->
+				<record id="defp">
+					<flags id="spec" value="text"/>
+					<!-- all items autosize vertically -->
+					<flags id="asiz" value="vertical"/>
+				</record>
+				
+				<!-- small inset from sides of table -->
+				<list id="cdpr">
+					<record indx="0">
+						<integer id="left" value="4"/>
+		  			</record>
+		  			<record indx="1">
+						<integer id="rght" value="4"/>
+		  			</record>
+		  			<record indx="2">
+						<flags id="algn" value="centre"/>
+		  			</record>
+				</list>
+
+				<!-- columns should be left and right aligned respectively -->
+				<list id="clpr">
+					<record indx="0">
+		  				<flags id="algn" value="left,centre_y"/>
+		  			</record>
+		  			<record indx="1">
+		  				<flags id="algn" value="right,centre_y"/>
+		  			</record>
+				</list>
+			</widget>
+		</widget>
+	
+</widget>
+	
+</container>
